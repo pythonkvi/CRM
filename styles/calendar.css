@@ -1,0 +1,35 @@
+.cell_usual {
+	width: 10px;
+	height: 10px;
+	background: fff;
+}
+
+.cell_saturday {
+	width: 10px;
+	height: 10px;
+	background: #4094E6;
+}
+
+.cell_sunday {
+	width: 10px;
+	height: 10px;
+	background: #A633D2;
+}
+
+.cell_today {
+	width: 10px;
+	height: 10px;
+	background: #6BE465;
+	border: 2px double #3B8285;
+}
+
+.label_year {
+	font-size: 14pt;
+	font-style: italic;
+}
+
+.label_month {
+	font-size: 12pt;
+	font-weight: bolder;
+	padding-top: 20px;
+}

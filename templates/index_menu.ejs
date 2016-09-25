@@ -1,0 +1,16 @@
+<% for(var i = 0; i <= maxWidth; i++){ %>
+  <div class="row">
+  <% for(var j = 0; j <= maxHeight; j++){ %>
+  <%   var flag = false; %>
+    <% $.each(data, function(key, k) { %>
+      <% if (i == k[2] && j == k[3]){ %>
+	<div class="cell"><a href="<%= k[4] %>"><div class="image"><img class="image" src="<%= k[0] %>"/><div class="imagetext"><%= k[1] %></div></div></a></div>
+	   <% flag = true; %>
+      	 <% } %>
+    	<% }); %>
+    	<% if (flag == false){ %>
+      	  <div class="emptycell"></div>
+    	<% } %>
+  <% } %>  		
+  </div>
+<% } %>

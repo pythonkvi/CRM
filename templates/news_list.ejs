@@ -1,0 +1,12 @@
+<% if (category_id != null) { %>
+	<div id="category<%= category_id %>" class="newscategory">
+        <%=
+            new EJS({url: "templates/news_category.ejs"}).render({categories: categ.loadROCategory(category_id)})
+        %>
+        </div>
+<% } %>
+
+<% for (var j = 0; j < news.length; ++j) { %>
+	<% news[j]["root_category_id"] = category_id; %>
+	<%= new EJS({url:'/templates/news_light.ejs'}).render (news[j]) %>
+<% } %>

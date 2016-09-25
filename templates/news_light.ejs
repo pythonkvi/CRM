@@ -1,0 +1,22 @@
+<div id="news_<%= id %>"> 
+	<% if (root_category_id == null) { %>
+		<div id="category<%= id %>" class="newscategory">
+		<%=
+			new EJS({url: "templates/news_category.ejs"}).render({categories: categ.loadROCategory(category_id)})
+		%>
+		</div>
+	<% } %>
+
+	<div style="overflow: hidden">
+		<div class="newsdate"><%= owner %><br/><span style="font-size: 75%">написал(а)</span><br/><%= newsdate %></div>
+
+		<% if (thumb_img != null) { %>
+			<div class="newsthumb"><a href="?id=<%= id %>"><img src="imageloader.php?image=<%= thumb_img %>"/></a></div>
+		<% } %>
+
+		<div class="newsheader"><%= header %></div>
+	</div>
+
+	<div class="newslink"><a href="?id=<%= id %>" class="seems_link">показать полностью</a></div>
+	<div class="news_delimiter"></div>
+</div>

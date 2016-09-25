@@ -1,0 +1,197 @@
+/* big part */
+
+div.row {
+    width: 100%;
+    float: right;
+}
+
+div.cell {
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+div.emptycell{
+    width: 150px;
+    height: 150px;
+    float: left;
+    text-align: center;
+}
+
+img.image {
+    width: 100%;
+    border: 0px;
+}
+
+div.image {
+    width: 150px;
+    float: left;
+}
+
+div.imagetext{
+    width: 150px;
+    text-align: center;
+}
+
+/* small part */
+
+div.small_row {
+    width: 100%;
+    float: right;
+}
+
+div.small_cell {
+    float: left;
+}
+
+div.small_emptycell {
+    float: left;
+    text-align: center;
+}
+
+img.small_image {
+    width: 15px;
+    height: 15px;
+    border: 0px;
+}
+
+div.small_image {
+    width: 15px;
+    height: 15px;
+    float: left;
+    padding: 0px 5px;
+}
+
+div.small_imagetext {
+    float: left;
+    text-align: center;
+}
+
+/* other */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(0,102,255)), to(rgb(131,202,84)));
+    background: -moz-linear-gradient(top, rgb(0,102,255), rgb(131,202,84));
+    background: -o-linear-gradient(top, rgb(0,102,255), rgb(131,202,84));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#FF0066FF, endColorstr=#FF83CA54);
+    height: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+div#header {
+    float: top;
+    font-size: 20pt;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+div#social {
+    position: relative;
+    top: 20px;
+    left: 0px;
+    float: left;
+}
+
+div#footer{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 11pt;
+}
+
+iframe#fb_xdm_frame_http {
+   width: 0;
+}
+
+iframe#fb_xdm_frame_https {
+   width: 0;
+}
+
+div.holiday_now {
+    font-size: 14pt;
+    color: red;
+}
+
+.animated_digit {
+    height: 44px;
+    width: 17px;
+    position: relative;
+    top: 22px;
+    float: left;
+}
+
+.clip   { position: absolute; top: 0; left: 0; }
+		
+.pos-0  { clip:rect(0px 15px 22px 0px); }
+.pos-1  { clip:rect(22px 15px 44px 0px); top: -22px;}
+.pos-2  { clip:rect(44px 15px 66px 0px); top: -44px;}
+.pos-3  { clip:rect(66px 15px 88px 0px); top: -66px;}
+.pos-4  { clip:rect(88px 15px 110px 0px); top: -88px;}
+.pos-5  { clip:rect(110px 15px 132px 0px); top: -110px;}
+.pos-6  { clip:rect(132px 15px 154px 0px); top: -132px;}
+.pos-7  { clip:rect(154px 15px 176px 0px); top: -154px;}
+.pos-8  { clip:rect(176px 15px 198px 0px); top: -176px;}
+.pos-9  { clip:rect(198px 15px 220px 0px); top: -198px;}
+
+#clock_content {
+    width: 150px;
+    height: 22px;
+}
+
+#authcontainer {
+    position: absolute;
+    right:0px;
+    top:0px;
+    width: 20%;
+}
+
+.button_blue {
+    background: -moz-linear-gradient(center top , #48C6D4, #3EACBA) repeat scroll 0 0 #3EACBA;
+    background: -webkit-gradient(linear, center top, center bottom, from(#48C6D4), to(#3EACBA));
+    background: -o-linear-gradient(center top, #48C6D4, #3EACBA);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#FF48C6D4, endColorstr=#FF3EACBA) /*progid:DXImageTransform.Microsoft.DropShadow(Color=#2C7982, OffX=5, OffY=5)*/;
+
+    border: 1px solid #379AA4;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: -1px -1px 0 #2C7982;
+
+    _width:0;
+    overflow:visible;
+    position:relative;
+    z-index: 0;
+}
+
+@font-face {
+	font-family: 'PoluUstav';
+	src: url('fonts/poluustav-webfont.eot');
+	src: local('☺'), url('fonts/poluustav-webfont.woff') format('woff'), url('fonts/poluustav-webfont.ttf') format('truetype'), url('fonts/poluustav-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+img.preview {
+  max-width: 800px;
+  max-height: 600px;
+}
+
+.mark_link {
+  border: 1px solid #000;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 12px;
+  height: 12px;
+}
+
+.mark_text {
+  color: #110088;
+  text-decoration: underline;
+}

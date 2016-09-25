@@ -1,0 +1,156 @@
+.newsdate {
+    color: white;
+    width: 10%;
+    padding-right: 5px;
+    float: left;
+    white-space: nowrap;
+}
+
+.newsthumb {
+    float: left;
+}
+
+.newslink {
+    padding-left: 10%;
+}
+
+.newsheader {
+    color: #60D6F9;
+    width: 60%;
+    padding-left: 10px;
+    font-size: 36pt;
+    font-family: PoluUstav;
+    float: left;
+}
+
+.newsbody {
+    width: 70%;
+    color: black;
+    font-style: italic;
+    font-size: 12pt;
+    display: inline-block;
+    clear: both;
+}
+
+.newscategory {
+    color: #a0f04b;
+    font-style: italic;
+    font-size: 14pt;
+    width: 80%;
+}
+
+.newsbody_small {
+    width: 70%;
+    height: 50px;
+    color: black;
+    font-style: italic;
+    font-size: 12pt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news_attach {
+    width: 70%;
+    margin-bottom: 5px;
+    min-height: 10px;
+}
+
+.news_delimiter {
+    width: 70%;
+    border-bottom: 1px solid black;
+}
+
+.news_comments {
+    width: 100%;
+    float: left;
+    padding-top: 10px;
+}
+
+.news_comment_level1{
+    padding-left: 50px;
+    float: left;
+}
+
+.news_comment_level2{
+    padding-left: 100px;
+    float: left;
+}
+
+.news_comment_level3{
+    padding-left: 150px;
+    float: left;
+}
+
+.news_comment_level4{
+    padding-left: 200px;
+    float: left;
+}
+
+.news_comment_level5{
+    padding-left: 250px;
+    float: left;
+}
+
+img.news_image {
+    max-width: 150px;
+    max-height: 150px;
+    margin-left: 3px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+img.news_big_image {
+    max-width: 600px;
+    max-height: 600px;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
+#bigwindow{
+    position: absolute;
+    max-width: 610px;
+    max-height: 620px;
+    z-index: 1;
+    display: none;
+}
+
+#commentwindow{
+    position: absolute;
+    max-width: 210px;
+    max-height: 110px;
+    z-index: 1;
+    display: none;
+}
+
+#commentwindow textarea{
+    height: 80px;
+    width: 100%;
+}
+
+.seems_link{
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: none;
+    display: block;
+}
+
+.search_string {
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search_button {
+    border: 0px solid #000;
+    background-image: url('/images/lupa.png');
+    background-repeat: no-repeat;
+    background-color: transparent ;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+//top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
