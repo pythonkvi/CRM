@@ -1,33 +1,23 @@
 <?php
 
-# Include the Dropbox SDK libraries
-require_once "Dropbox/autoload.php";
-use \Dropbox as dbx;
+function uploadPostImage($url){
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, 'https://content.dropboxapi.com/2/files/download');
+  curl_setopt($ch, CURLOPT_HEADER, true);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer iFg29ADe7vkAAAAAAAANEZP8rWJMI54WLiUMy9_nWWMIqvZEtZDs3SGN0rlIuhBh', 'Dropbox-API-Arg: {"path": "'.$url.'"}', 'Expect:', 'Content-Length:', 'Content-Type:'));
+  curl_setopt($ch, CURLOPT_VERBOSE, true);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+  curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)");
+  curl_setopt($ch, CURLOPT_POST, true);
+  $data = curl_exec($ch);
+  curl_close($ch);
 
-$appInfo = dbx\AppInfo::loadFromJsonFile("dropbox.json");
-$webAuth = new dbx\WebAuthNoRedirect($appInfo, "PHP-Example/1.0");
+  return $data;
+}
 
-$authorizeUrl = $webAuth->start();
+var_dump(uploadPostImage('/nomer.jpg'));
 
-#echo "1. Go to: " . $authorizeUrl . "\n";
-#echo "2. Click \"Allow\" (you might have to log in first).\n";
-#echo "3. Copy the authorization code.\n";
-#$authCode = \trim(\readline("Enter the authorization code here: "));
-
-#list($accessToken, $dropboxUserId) = $webAuth->finish($authCode);
-#print "Access Token: " . $accessToken . "\n";
-
-$accessToken = "EGstxc6sviYAAAAAAAAAAapJ5Oq4K5NqS9WeuxV7Z-Be9HYkUQHWBnl0AMw2T97b";
-$dbxClient = new dbx\Client($accessToken, "PHP-Example/1.0");
-$accountInfo = $dbxClient->getAccountInfo();
-
-$db = new PDO('sqlite:site.db');
-$result = $db->query("SELECT link FROM demotivator_dropbox ORDER BY RANDOM () LIMIT 1");
-$a = $result->fetch();
-$f = tmpfile();
-$fileMetadata = $dbxClient->getFile($a[0], $f);
-$finalpos = ftell($f);
-fseek($f, 0);
-echo fread($f, $finalpos);
-fclose($f);
 ?>
