@@ -17,7 +17,8 @@ function uploadPostImage($url){
   $params =  array('image'=>'@'.$url, 'title'=>'qq', 'album'=>'urn:yandex:fotki:rootkvi:album:141403');
   curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
   $data = curl_exec($ch);
-
+  curl_close($ch);
+  
   var_dump($data);
   $xml = simplexml_load_string($data);
  
