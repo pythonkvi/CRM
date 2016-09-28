@@ -1,42 +1,36 @@
 <?php
 
-# Include the Dropbox SDK libraries
-require_once "Dropbox/autoload.php";
-use \Dropbox as dbx;
+//curl -X POST https://api.dropboxapi.com/2/files/list_folder --header "Authorization: Bearer iFg29ADe7vkAAAAAAAANEZP8rWJMI54WLiUMy9_nWWMIqvZEtZDs3SGN0rlIuhBh" --header "Content-Type: application/json" --data "{\"path\": \"\",\"recursive\": false,\"include_media_info\": false,\"include_deleted\": false,\"include_has_explicit_shared_members\": false}"
 
-$appInfo = dbx\AppInfo::loadFromJsonFile("dropbox.json");
-$webAuth = new dbx\WebAuthNoRedirect($appInfo, "PHP-Example/1.0");
+function uploadPostImage(){
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, 'https://api.dropboxapi.com/2/files/list_folder');
+  curl_setopt($ch, CURLOPT_HEADER, false);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer iFg29ADe7vkAAAAAAAANEZP8rWJMI54WLiUMy9_nWWMIqvZEtZDs3SGN0rlIuhBh', 'Expect:', 'Content-Length: 129', 'Content-Type: application/json'));
+  curl_setopt($ch, CURLOPT_VERBOSE, true);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+  curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)");
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"path\": \"\",\"recursive\": false,\"include_media_info\": false,\"include_deleted\": false,\"include_has_explicit_shared_members\": false}");
 
-$authorizeUrl = $webAuth->start();
+  $data = curl_exec($ch);
+  var_dump($data);
+  curl_close($ch);
 
-#echo "1. Go to: " . $authorizeUrl . "\n";
-#echo "2. Click \"Allow\" (you might have to log in first).\n";
-#echo "3. Copy the authorization code.\n";
-#$authCode = \trim(\readline("Enter the authorization code here: "));
-
-#list($accessToken, $dropboxUserId) = $webAuth->finish($authCode);
-#print "Access Token: " . $accessToken . "\n";
-
-$accessToken = "EGstxc6sviYAAAAAAAAAAapJ5Oq4K5NqS9WeuxV7Z-Be9HYkUQHWBnl0AMw2T97b";
-$dbxClient = new dbx\Client($accessToken, "PHP-Example/1.0");
-$accountInfo = $dbxClient->getAccountInfo();
-
-print_r($accountInfo);
-
-#$f = fopen("working-draft.txt", "rb");
-#$result = $dbxClient->uploadFile("/working-draft.txt", dbx\WriteMode::add(), $f);
-#print_r($result);
+  return $data;
+}
 
 $db = new PDO('sqlite:site.db');
 $db->query("DELETE FROM demotivator_dropbox");
-$folderMetadata = $dbxClient->getMetadataWithChildren("/Photos");
+$folderMetadata = json_decode(uploadPostImage());
 
-#var_dump($folderMetadata );
-foreach ($folderMetadata["contents"] as $k=>$v) {
-  if ($v["is_dir"] != 1) {
-    print "INSERT INTO demotivator_dropbox (link) values ('".$v["path"]."')\n";
-    $db->query("INSERT INTO demotivator_dropbox (link) values ('".$v["path"]."')");
-  }
+var_dump($folderMetadata );
+foreach ($folderMetadata->{'entries'} as $k=>$v) {
+    print "INSERT INTO demotivator_dropbox (link) values ('".$v->{"path_lower"}."')\n";
+    $db->query("INSERT INTO demotivator_dropbox (link) values ('".$v->{"path_lower"}."')");
 }
 
 #$f = fopen("working-draft.txt", "w+b");
