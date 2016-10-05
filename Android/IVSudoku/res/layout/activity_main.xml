@@ -1,0 +1,182 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"    
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/background" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttonHighscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_buttonHighscore" />
+
+        <Button
+            android:id="@+id/buttonNewGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_buttonNewGame" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/lableDifficult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="@string/title_Difficult" />
+
+                <TextView
+                    android:id="@+id/labelTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="@string/title_Timer" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <SeekBar
+                    android:id="@+id/seekBar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7" />
+
+                <TextView
+                    android:id="@+id/timeCounter"
+                    style="@style/ButtonText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="@string/title_TimerCounter" />
+
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/digit0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit0"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/digit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit1"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/digit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit2"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/digit3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit3"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/digit4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit4"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/digit5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit5"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/digit6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit6"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/digit7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit7"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/digit8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit8"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/digit9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/digit_button"
+            android:text="@string/title_digit9"
+            android:textSize="12pt" />
+    </LinearLayout>
+
+    <ru.ivalera.ivsudoku.MatrixView
+        android:id="@+id/field"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

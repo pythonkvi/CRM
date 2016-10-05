@@ -1,0 +1,19 @@
+﻿{
+    "name" : "Rutor.Org Quick Download", 
+    "version" : "1.0",
+    "manifest_version": 2,
+    "description" : "This is a chrome extention for Rutor.Org",
+    "background" : { "scripts" : [ "background.js" ] },
+    "permissions": [
+        "tabs", "http://rutor.org/*"
+    ],
+    "browser_action" : {
+        "default_title" : "Rutor.Org quick search", //Текст, всплывающий при наведении курсора на иконку (если не задан, то всплывает название расширения)
+        "default_icon" : "img/icon_world.png", //Иконка для панели расширений (по умолчанию)
+        "default_popup" : "popup.html" //Всплывающее окно при клике на иконке
+    },
+    "content_scripts": [{       // работа с DOM
+		"matches": ["http://rutor.org/*"],
+		"js": ["parse.js"]
+  }]
+}

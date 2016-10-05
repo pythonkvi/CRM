@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <!--
+            <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:onClick="selfDestruct"
+            android:textSize="14pt"
+        	android:textStyle="bold"
+            android:text="@string/title_buttonBack" />
+    -->
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/Author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_Owner" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/DateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_DateTime" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/Category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_CategoryID" />
+
+     <Gallery
+        android:id="@+id/gvPict"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffaacc" />   
+        
+     <WebView
+        android:id="@+id/webView1"
+        android:layout_width="fill_parent"
+        android:layout_height="4096dp"
+        android:background="#00aacc"/>
+
+</LinearLayout>
