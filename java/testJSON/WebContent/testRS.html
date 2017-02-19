@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function callBackJSONP(o) {
+		alert(o.m);
+	}
+</script>
+<script type="text/javascript" src="http://localhost:8080/testJSON/api/echo?q=122&jsonp=callBackJSONP">
+</script>
+</body>
+</html>
